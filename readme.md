@@ -5,41 +5,6 @@ Output of the program is VM code designed to run on a virtual machine implemente
 The implementation steps:
  - Tokenizizer
 A basic service of any syntax analyzer, is the act of breaking a given textual input into a stream of tokens. And while it is at it, the tokenizer can also classify the tokens into lexical categories.
-Example: Source Code:
-if (x < 0) {
-   let state = "negative";
-}
-
-Output:
-<tokens>
-
-<keyword> if </keyword>
-
-<symbol> ( </symbol>
-
-<identifier> x </identifier>
-
-<symbol> &lt; </symbol>
-
-<integerConstant> 0 </integerConstant>
-
-<symbol> ) </symbol>
-
-<symbol> { </symbol>
-
-<keyword> let </keyword>
-
-<identifier> state </identifier>
-
-<symbol> = </symbol>
-
-<stringConstant> negative </stringConstant>
-
-<symbol> ; </symbol>
-
-<symbol> } </symbol>
-
-</tokens>
 
 -Parser: Compilation Engine
 In the context of this project, parsing is defined narrowly as the act of going over the tokenized input and rendering its grammatical structure using some agreed-upon format. The specific parser that we implement here is based on the Jack grammar and is designed to emit XML output. 
